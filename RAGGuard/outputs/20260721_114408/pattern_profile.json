@@ -1,0 +1,96 @@
+{
+  "total_cases": 20,
+  "hallucination_cases": 18,
+  "ok_cases": 2,
+  "hallucination_rate": 0.9,
+  "total_claims": 67,
+  "claims_per_case_avg": 3.4,
+  "type_distribution": {
+    "参数编造": 4,
+    "能力越界": 4,
+    "政策编造": 3,
+    "信息编造": 3,
+    "优惠编造": 2,
+    "安全误导": 1,
+    "信息遗漏": 1
+  },
+  "severity_distribution": {
+    "High": 12,
+    "Critical": 5,
+    "Medium": 1
+  },
+  "nli_distribution": {
+    "CONTRADICTED": 44,
+    "UNMENTIONED": 13,
+    "ENTAILED": 10
+  },
+  "contradicted_count": 44,
+  "tool_trace_stats": {
+    "claims_with_tool_trace": 67,
+    "numeric_conflicts_detected": 5,
+    "polarity_conflicts_detected": 6,
+    "capability_violations_detected": 4,
+    "unmarked_feature_matches": 1,
+    "explicit_no_matches": 0,
+    "avg_kb_overlap_ratio": 0.255
+  },
+  "contradiction_patterns": {
+    "numeric_only": 5,
+    "polarity_only": 6,
+    "capability_only": 4,
+    "numeric_and_polarity": 0,
+    "numeric_and_capability": 0,
+    "polarity_and_capability": 0,
+    "no_tool_match": 29
+  },
+  "top_contradiction_topics": [
+    [
+      "能力越界: 声称执行了KB不具备的操作",
+      4
+    ],
+    [
+      "极性矛盾: 线下门店",
+      4
+    ],
+    [
+      "数值矛盾: ms",
+      1
+    ],
+    [
+      "极性矛盾: 发票, 支持",
+      1
+    ],
+    [
+      "极性矛盾: 纸质发票",
+      1
+    ],
+    [
+      "极性矛盾: 纸质, 质发, 发票",
+      1
+    ],
+    [
+      "数值矛盾: 金额",
+      1
+    ],
+    [
+      "数值矛盾: 小时",
+      1
+    ],
+    [
+      "数值矛盾: 天",
+      1
+    ]
+  ],
+  "claims_per_case_distribution": {
+    "2": 3,
+    "3": 9,
+    "4": 7,
+    "6": 1
+  },
+  "kb_overlap_distribution": {
+    "0-25%": 48,
+    "25-50%": 9,
+    "50-75%": 8,
+    "75-100%": 2
+  }
+}

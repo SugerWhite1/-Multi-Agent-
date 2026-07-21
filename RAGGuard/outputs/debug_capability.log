@@ -1,0 +1,18 @@
+2026-07-21 10:54:49 | INFO    | ragguard                 | RAGGuard logging initialized (level=DEBUG, file=outputs/debug_capability.log)
+2026-07-21 10:54:49 | DEBUG   | ragguard.engine          | === Processing h03 ===
+2026-07-21 10:54:49 | DEBUG   | ragguard.engine          |   user_question len=8, reply len=42, kb len=16
+2026-07-21 10:54:58 | DEBUG   | ragguard.engine          | API call OK | model=deepseek-v4-pro | elapsed=8.10s | response_len=288
+2026-07-21 10:54:58 | DEBUG   | ragguard.engine          | extract_claims: extracted 4 claims (fact=3, action_tool=1)
+2026-07-21 10:54:58 | DEBUG   | ragguard.engine          | verify_claim tools: numeric_conflict=False polarity_conflict=False cap_violation=False kb_overlap=0%
+2026-07-21 10:55:06 | DEBUG   | ragguard.engine          | API call OK | model=deepseek-v4-pro | elapsed=8.39s | response_len=160
+2026-07-21 10:55:06 | DEBUG   | ragguard.engine          | verify_claim NLI: CONTRADICTED
+2026-07-21 10:55:06 | DEBUG   | ragguard.engine          | verify_claim tools: numeric_conflict=False polarity_conflict=False cap_violation=False kb_overlap=0%
+2026-07-21 10:55:14 | DEBUG   | ragguard.engine          | API call OK | model=deepseek-v4-pro | elapsed=7.71s | response_len=150
+2026-07-21 10:55:14 | DEBUG   | ragguard.engine          | verify_claim NLI: UNMENTIONED
+2026-07-21 10:55:14 | DEBUG   | ragguard.engine          | verify_claim tools: numeric_conflict=False polarity_conflict=False cap_violation=False kb_overlap=0%
+2026-07-21 10:55:29 | DEBUG   | ragguard.engine          | API call OK | model=deepseek-v4-pro | elapsed=15.73s | response_len=177
+2026-07-21 10:55:29 | DEBUG   | ragguard.engine          | verify_claim NLI: CONTRADICTED
+2026-07-21 10:55:29 | DEBUG   | ragguard.engine          | classify: case=h03 | contradicted=3 unmentioned=1 total_claims=4
+2026-07-21 10:55:44 | DEBUG   | ragguard.engine          | API call OK | model=deepseek-v4-pro | elapsed=14.23s | response_len=199
+2026-07-21 10:55:44 | DEBUG   | ragguard.engine          | classify: case=h03 type=能力越界 severity=Critical
+2026-07-21 10:55:44 | INFO    | ragguard.engine          | h03: HALLUCINATION | type=能力越界 severity=Critical claims=4

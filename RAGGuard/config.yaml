@@ -1,0 +1,10 @@
+# RAGGuard Configuration
+
+llm:
+  api_key: ""
+  base_url: "https://api.deepseek.com"
+  model: "deepseek-v4-pro"
+
+data:
+  replies_path: "data/replies.json"
+  ground_truth_path: "data/ground_truth.json"

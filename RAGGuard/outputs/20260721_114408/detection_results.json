@@ -1,0 +1,2136 @@
+[
+  {
+    "id": "h01",
+    "is_hallucination": true,
+    "hallucination_type": "政策编造",
+    "severity": "High",
+    "detail": "回复包含两条与知识库根本对立的政策声明：【声明1】声称“全品类支持30天无理由退货”，但知识库明确“普通商品支持7天无理由退货，质量问题30天内可退换”，天数与适用范围均完全错误；【声明2】声称“运费由我们承担”，但知识库明确“非质量问题退货运费由买家承担”，运费承担方完全相反。两条均属于退货政策的根本性编造，导致用户可能错误理解退货权益。主矛盾为全品类30天无理由退货的完全编造，故整体判定为政策编造（High）。",
+    "claims": [
+      {
+        "claim_text": "全品类支持30天无理由退货",
+        "claim_type": "fact",
+        "nli_status": "CONTRADICTED",
+        "reasoning": "Claim声称全品类支持30天无理由退货，而KB明确指出普通商品支持7天无理由退货，质量问题30天内可退换。两者在无理由退货天数上直接矛盾（30天 vs 7天），且Claim将适用范围扩大到全品类，忽略了KB中'质量问题'的限定条件。",
+        "tool_trace": {
+          "numeric": {
+            "has_conflict": false,
+            "conflicts": [],
+            "amount_conflict": [],
+            "version_conflict": []
+          },
+          "polarity": {
+            "has_conflict": false,
+            "conflicts": []
+          },
+          "capability": {
+            "has_no_capability": false,
+            "capability_violation": false,
+            "unmarked_match": false,
+            "explicit_no_match": false
+          },
+          "kb_location": {
+            "overlap_ratio": 0.667,
+            "best_section": "退货政策：普通商品支持7天无理由退货，质量问题30天内可退换。非质量问题退货运费由买家承担。"
+          }
+        }
+      },
+      {
+        "claim_text": "退货的运费由商家承担",
+        "claim_type": "fact",
+        "nli_status": "CONTRADICTED",
+        "reasoning": "声明称退货的运费由商家承担，但KB明确指出“非质量问题退货运费由买家承担”，明确存在运费承担方矛盾。声明过于绝对且与KB的限定条件根本对立，故判定为矛盾。",
+        "tool_trace": {
+          "numeric": {
+            "has_conflict": false,
+            "conflicts": [],
+            "amount_conflict": [],
+            "version_conflict": []
+          },
+          "polarity": {
+            "has_conflict": false,
+            "conflicts": []
+          },
+          "capability": {
+            "has_no_capability": false,
+            "capability_violation": false,
+            "unmarked_match": false,
+            "explicit_no_match": false
+          },
+          "kb_location": {
+            "overlap_ratio": 0.556,
+            "best_section": "退货政策：普通商品支持7天无理由退货，质量问题30天内可退换。非质量问题退货运费由买家承担。"
+          }
+        }
+      },
+      {
+        "claim_text": "可以在订单详情页直接申请退货",
+        "claim_type": "fact",
+        "nli_status": "UNMENTIONED",
+        "reasoning": "KB仅说明了退货的时效和运费规则，未提及申请退货的具体入口或操作路径，因此无法验证Claim中'在订单详情页直接申请退货'这一流程描述。",
+        "tool_trace": {
+          "numeric": {
+            "has_conflict": false,
+            "conflicts": [],
+            "amount_conflict": [],
+            "version_conflict": []
+          },
+          "polarity": {
+            "has_conflict": false,
+            "conflicts": []
+          },
+          "capability": {
+            "has_no_capability": false,
+            "capability_violation": false,
+            "unmarked_match": false,
+            "explicit_no_match": false
+          },
+          "kb_location": {
+            "overlap_ratio": 0.077,
+            "best_section": "退货政策：普通商品支持7天无理由退货，质量问题30天内可退换。非质量问题退货运费由买家承担。"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "id": "h02",
+    "is_hallucination": true,
+    "hallucination_type": "参数编造",
+    "severity": "High",
+    "detail": "回复中声称的蓝牙5.3版本、多设备同时连接、延迟低至40ms均与知识库中的蓝牙5.0、单设备连接、延迟约80ms直接矛盾，属于产品参数编造。",
+    "claims": [
+      {
+        "claim_text": "这款耳机采用蓝牙5.3版本",
+        "claim_type": "fact",
+        "nli_status": "CONTRADICTED",
+        "reasoning": "声明声称耳机采用蓝牙5.3版本，但知识库明确标注产品参数为蓝牙5.0，蓝牙版本数值直接矛盾。",
+        "tool_trace": {
+          "numeric": {
+            "has_conflict": true,
+            "conflicts": [],
+            "amount_conflict": [],
+            "version_conflict": true
+          },
+          "polarity": {
+            "has_conflict": false,
+            "conflicts": []
+          },
+          "capability": {
+            "has_no_capability": false,
+            "capability_violation": false,
+            "unmarked_match": false,
+            "explicit_no_match": false
+          },
+          "kb_location": {
+            "overlap_ratio": 0.182,
+            "best_section": "产品参数：蓝牙5.0，支持单设备连接，延迟约80ms。"
+          }
+        }
+      },
+      {
+        "claim_text": "这款耳机支持多设备同时连接",
+        "claim_type": "fact",
+        "nli_status": "CONTRADICTED",
+        "reasoning": "KB明确说明'支持单设备连接'，即不支持多设备同时连接，与Claim声称的'支持多设备同时连接'根本矛盾。",
+        "tool_trace": {
+          "numeric": {
+            "has_conflict": false,
+            "conflicts": [],
+            "amount_conflict": [],
+            "version_conflict": []
+          },
+          "polarity": {
+            "has_conflict": false,
+            "conflicts": []
+          },
+          "capability": {
+            "has_no_capability": false,
+            "capability_violation": false,
+            "unmarked_match": false,
+            "explicit_no_match": false
+          },
+          "kb_location": {
+            "overlap_ratio": 0.25,
+            "best_section": "产品参数：蓝牙5.0，支持单设备连接，延迟约80ms。"
+          }
+        }
+      },
+      {
+        "claim_text": "这款耳机延迟低至40ms",
+        "claim_type": "fact",
+        "nli_status": "CONTRADICTED",
+        "reasoning": "声明中的延迟数值40ms与KB中的约80ms存在明显矛盾，数值不一致。",
+        "tool_trace": {
+          "numeric": {
+            "has_conflict": true,
+            "conflicts": [
+              {
+                "unit": "ms",
+                "claim_value": [
+                  40.0
+                ],
+                "kb_value": [
+                  80.0
+                ]
+              }
+            ],
+            "amount_conflict": [],
+            "version_conflict": []
+          },
+          "polarity": {
+            "has_conflict": false,
+            "conflicts": []
+          },
+          "capability": {
+            "has_no_capability": false,
+            "capability_violation": false,
+            "unmarked_match": false,
+            "explicit_no_match": false
+          },
+          "kb_location": {
+            "overlap_ratio": 0.111,
+            "best_section": "产品参数：蓝牙5.0，支持单设备连接，延迟约80ms。"
+          }
+        }
+      },
+      {
+        "claim_text": "这款耳机非常适合游戏使用",
+        "claim_type": "fact",
+        "nli_status": "UNMENTIONED",
+        "reasoning": "声明核心是该耳机非常适合游戏使用，但知识库仅提供了蓝牙版本、连接方式和延迟参数，未提及任何关于游戏适用性的评价或限制。KB未直接支持或否定该说法，因此无法验证，判定为UNMENTIONED。",
+        "tool_trace": {
+          "numeric": {
+            "has_conflict": false,
+            "conflicts": [],
+            "amount_conflict": [],
+            "version_conflict": []
+          },
+          "polarity": {
+            "has_conflict": false,
+            "conflicts": []
+          },
+          "capability": {
+            "has_no_capability": false,
+            "capability_violation": false,
+            "unmarked_match": false,
+            "explicit_no_match": false
+          },
+          "kb_location": {
+            "overlap_ratio": 0.0,
+            "best_section": "产品参数：蓝牙5.0，支持单设备连接，延迟约80ms。"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "id": "h03",
+    "is_hallucination": true,
+    "hallucination_type": "能力越界",
+    "severity": "Critical",
+    "detail": "系统声称已执行查快递操作并提供了具体物流位置与预计送达时间，但知识库明确标注未接入物流查询接口，该矛盾属于根本性的能力越界，是导致整条回复被判定为幻觉的主矛盾。其余编造信息均源于此能力越界。",
+    "claims": [
+      {
+        "claim_text": "已帮您查询了包裹物流状态",
+        "claim_type": "action_tool",
+        "nli_status": "CONTRADICTED",
+        "reasoning": "能力越界：知识库表明系统不具备该操作能力（工具判定）",
+        "tool_trace": {
+          "numeric": {
+            "has_conflict": false,
+            "conflicts": [],
+            "amount_conflict": [],
+            "version_conflict": []
+          },
+          "polarity": {
+            "has_conflict": false,
+            "conflicts": []
+          },
+          "capability": {
+            "has_no_capability": true,
+            "capability_violation": true,
+            "unmarked_match": false,
+            "explicit_no_match": false
+          },
+          "kb_location": {
+            "overlap_ratio": 0.182,
+            "best_section": "无（客服系统未接入物流查询接口）"
+          }
+        }
+      },
+      {
+        "claim_text": "您的包裹目前在南京转运中心",
+        "claim_type": "fact",
+        "nli_status": "CONTRADICTED",
+        "reasoning": "核心断言是包裹位于南京转运中心，属于物流查询功能。KB明确说明‘客服系统未接入物流查询接口’，即系统不具备物流位置查询能力。根据判定原则，若KB未标注/未提及某功能，而Claim肯定该功能存在，则视为矛盾。因此，声称可以给出具体位置与KB的能力限制直接冲突。",
+        "tool_trace": {
+          "numeric": {
+            "has_conflict": false,
+            "conflicts": [],
+            "amount_conflict": [],
+            "version_conflict": []
+          },
+          "polarity": {
+            "has_conflict": false,
+            "conflicts": []
+          },
+          "capability": {
+            "has_no_capability": true,
+            "capability_violation": false,
+            "unmarked_match": false,
+            "explicit_no_match": false
+          },
+          "kb_location": {
+            "overlap_ratio": 0.0,
+            "best_section": "无（客服系统未接入物流查询接口）"
+          }
+        }
+      },
+      {
+        "claim_text": "预计明天下午送达",
+        "claim_type": "fact",
+        "nli_status": "CONTRADICTED",
+        "reasoning": "KB明确指出'客服系统未接入物流查询接口'，表明系统无法提供物流信息及预计送达时间。声明声称'预计明天下午送达'，却给出了一个具体的物流预测，这与KB中'未接入'的能力限制根本矛盾，因此判为矛盾。",
+        "tool_trace": {
+          "numeric": {
+            "has_conflict": false,
+            "conflicts": [],
+            "amount_conflict": [],
+            "version_conflict": []
+          },
+          "polarity": {
+            "has_conflict": false,
+            "conflicts": []
+          },
+          "capability": {
+            "has_no_capability": true,
+            "capability_violation": false,
+            "unmarked_match": false,
+            "explicit_no_match": false
+          },
+          "kb_location": {
+            "overlap_ratio": 0.0,
+            "best_section": "无（客服系统未接入物流查询接口）"
+          }
+        }
+      },
+      {
+        "claim_text": "如有变动会短信通知您",
+        "claim_type": "fact",
+        "nli_status": "UNMENTIONED",
+        "reasoning": "KB仅说明客服系统未接入物流查询接口，未涉及短信通知变动的任何信息，无法判断声明真实性。",
+        "tool_trace": {
+          "numeric": {
+            "has_conflict": false,
+            "conflicts": [],
+            "amount_conflict": [],
+            "version_conflict": []
+          },
+          "polarity": {
+            "has_conflict": false,
+            "conflicts": []
+          },
+          "capability": {
+            "has_no_capability": true,
+            "capability_violation": false,
+            "unmarked_match": false,
+            "explicit_no_match": false
+          },
+          "kb_location": {
+            "overlap_ratio": 0.0,
+            "best_section": "无（客服系统未接入物流查询接口）"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "id": "h04",
+    "is_hallucination": true,
+    "hallucination_type": "政策编造",
+    "severity": "High",
+    "detail": "主矛盾为回复编造了不存在的纸质发票支持（声明[2]），与知识库“暂不支持纸质发票”根本对立，属于政策编造。",
+    "claims": [
+      {
+        "claim_text": "支持开具电子发票",
+        "claim_type": "fact",
+        "nli_status": "CONTRADICTED",
+        "reasoning": "[工具覆写] 极性矛盾，LLM 未识别。原reasoning: 声明核心断言为‘支持开具电子发票’，KB 明确写明‘支持电子发票’，两者一致。虽然 KB 还提及申请路径和所需信息，但声明仅确认功能存在，未构成矛盾。",
+        "tool_trace": {
+          "numeric": {
+            "has_conflict": false,
+            "conflicts": [],
+            "amount_conflict": [],
+            "version_conflict": []
+          },
+          "polarity": {
+            "has_conflict": true,
+            "conflicts": [
+              {
+                "topic": "发票, 支持",
+                "claim_stance": "肯定(支持)",
+                "kb_stance": "否定(暂不支持)",
+                "rule": "contextual"
+              }
+            ]
+          },
+          "capability": {
+            "has_no_capability": false,
+            "capability_violation": false,
+            "unmarked_match": false,
+            "explicit_no_match": false
+          },
+          "kb_location": {
+            "overlap_ratio": 0.571,
+            "best_section": "发票政策：支持电子发票，下单后在订单详情页申请。暂不支持纸质发票。申请时需提供发票抬头和税号。"
+          }
+        }
+      },
+      {
+        "claim_text": "支持开具纸质发票",
+        "claim_type": "fact",
+        "nli_status": "CONTRADICTED",
+        "reasoning": "KB明确注明“暂不支持纸质发票”，而Claim声称“支持开具纸质发票”，两者在纸质发票的支持性上直接矛盾，属于极性对立。",
+        "tool_trace": {
+          "numeric": {
+            "has_conflict": false,
+            "conflicts": [],
+            "amount_conflict": [],
+            "version_conflict": []
+          },
+          "polarity": {
+            "has_conflict": true,
+            "conflicts": [
+              {
+                "topic": "纸质发票",
+                "claim_stance": "肯定",
+                "kb_stance": "否定",
+                "rule": "negation_pair"
+              },
+              {
+                "topic": "纸质, 质发, 发票",
+                "claim_stance": "肯定(支持)",
+                "kb_stance": "否定(暂不支持)",
+                "rule": "contextual"
+              }
+            ]
+          },
+          "capability": {
+            "has_no_capability": false,
+            "capability_violation": false,
+            "unmarked_match": false,
+            "explicit_no_match": false
+          },
+          "kb_location": {
+            "overlap_ratio": 0.571,
+            "best_section": "发票政策：支持电子发票，下单后在订单详情页申请。暂不支持纸质发票。申请时需提供发票抬头和税号。"
+          }
+        }
+      },
+      {
+        "claim_text": "下单时需在备注中填写发票抬头和税号",
+        "claim_type": "fact",
+        "nli_status": "CONTRADICTED",
+        "reasoning": "KB明确指出申请电子发票需在下单后在订单详情页申请，且申请时提供发票抬头和税号，而Claim要求在下单时于备注中填写，操作时间点与方式均与KB流程矛盾。",
+        "tool_trace": {
+          "numeric": {
+            "has_conflict": false,
+            "conflicts": [],
+            "amount_conflict": [],
+            "version_conflict": []
+          },
+          "polarity": {
+            "has_conflict": false,
+            "conflicts": []
+          },
+          "capability": {
+            "has_no_capability": false,
+            "capability_violation": false,
+            "unmarked_match": false,
+            "explicit_no_match": false
+          },
+          "kb_location": {
+            "overlap_ratio": 0.5,
+            "best_section": "发票政策：支持电子发票，下单后在订单详情页申请。暂不支持纸质发票。申请时需提供发票抬头和税号。"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "id": "h05",
+    "is_hallucination": true,
+    "hallucination_type": "优惠编造",
+    "severity": "High",
+    "detail": "回复声称存在“满300减50”的优惠券，与KB明确声明“无满300减50的活动”根本对立，属于编造不存在的优惠活动，构成优惠编造。",
+    "claims": [
+      {
+        "claim_text": "现在有一张满300减50的店铺优惠券",
+        "claim_type": "fact",
+        "nli_status": "CONTRADICTED",
+        "reasoning": "KB明确声明“无满300减50的活动”，而Claim声称“有一张满300减50的店铺优惠券”，两者直接矛盾。",
+        "tool_trace": {
+          "numeric": {
+            "has_conflict": true,
+            "conflicts": [],
+            "amount_conflict": true,
+            "version_conflict": []
+          },
+          "polarity": {
+            "has_conflict": false,
+            "conflicts": []
+          },
+          "capability": {
+            "has_no_capability": false,
+            "capability_violation": false,
+            "unmarked_match": false,
+            "explicit_no_match": false
+          },
+          "kb_location": {
+            "overlap_ratio": 0.471,
+            "best_section": "当前优惠活动：满200减20、满500减60。无满300减50的活动。"
+          }
+        }
+      },
+      {
+        "claim_text": "已为您将优惠券发送到账户",
+        "claim_type": "action_tool",
+        "nli_status": "UNMENTIONED",
+        "reasoning": "知识库仅描述当前优惠活动规则，未提及优惠券是否已发送到账户的相关信息，无法验证该声明的真实性。",
+        "tool_trace": {
+          "numeric": {
+            "has_conflict": false,
+            "conflicts": [],
+            "amount_conflict": [],
+            "version_conflict": []
+          },
+          "polarity": {
+            "has_conflict": false,
+            "conflicts": []
+          },
+          "capability": {
+            "has_no_capability": false,
+            "capability_violation": false,
+            "unmarked_match": false,
+            "explicit_no_match": false
+          },
+          "kb_location": {
+            "overlap_ratio": 0.091,
+            "best_section": "当前优惠活动：满200减20、满500减60。无满300减50的活动。"
+          }
+        }
+      },
+      {
+        "claim_text": "结账时自动抵扣",
+        "claim_type": "fact",
+        "nli_status": "UNMENTIONED",
+        "reasoning": "声明仅声称“结账时自动抵扣”，而知识库仅列出了具体的满减活动（满200减20、满500减60）并否定满300减50的活动，未提及任何关于“自动抵扣”机制的信息。该功能既未被证实也未被否定，因此声明内容在知识库中未得到说明。",
+        "tool_trace": {
+          "numeric": {
+            "has_conflict": false,
+            "conflicts": [],
+            "amount_conflict": [],
+            "version_conflict": []
+          },
+          "polarity": {
+            "has_conflict": false,
+            "conflicts": []
+          },
+          "capability": {
+            "has_no_capability": false,
+            "capability_violation": false,
+            "unmarked_match": false,
+            "explicit_no_match": false
+          },
+          "kb_location": {
+            "overlap_ratio": 0.0,
+            "best_section": "当前优惠活动：满200减20、满500减60。无满300减50的活动。"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "id": "h06",
+    "is_hallucination": true,
+    "hallucination_type": "参数编造",
+    "severity": "High",
+    "detail": "回复中声明材质为头层牛皮，与知识库PU合成革根本矛盾；保修期声明为两年，与知识库6个月直接矛盾。上述错误均属产品参数编造，故归类为参数编造，严重度高。",
+    "claims": [
+      {
+        "claim_text": "这款包采用头层牛皮制作",
+        "claim_type": "fact",
+        "nli_status": "CONTRADICTED",
+        "reasoning": "声明声称材质为头层牛皮，但知识库明确标注材质为PU合成革，两者直接矛盾。",
+        "tool_trace": {
+          "numeric": {
+            "has_conflict": false,
+            "conflicts": [],
+            "amount_conflict": [],
+            "version_conflict": []
+          },
+          "polarity": {
+            "has_conflict": false,
+            "conflicts": []
+          },
+          "capability": {
+            "has_no_capability": false,
+            "capability_violation": false,
+            "unmarked_match": false,
+            "explicit_no_match": false
+          },
+          "kb_location": {
+            "overlap_ratio": 0.0,
+            "best_section": "材质：PU合成革。保修期：6个月。"
+          }
+        }
+      },
+      {
+        "claim_text": "这款包手感柔软耐用",
+        "claim_type": "fact",
+        "nli_status": "UNMENTIONED",
+        "reasoning": "KB 仅提供了材质（PU合成革）和保修期（6个月），并未提及手感是否柔软耐用，声明属于主观感受，KB 未提供相关证据，无法验证。",
+        "tool_trace": {
+          "numeric": {
+            "has_conflict": false,
+            "conflicts": [],
+            "amount_conflict": [],
+            "version_conflict": []
+          },
+          "polarity": {
+            "has_conflict": false,
+            "conflicts": []
+          },
+          "capability": {
+            "has_no_capability": false,
+            "capability_violation": false,
+            "unmarked_match": false,
+            "explicit_no_match": false
+          },
+          "kb_location": {
+            "overlap_ratio": 0.0,
+            "best_section": "材质：PU合成革。保修期：6个月。"
+          }
+        }
+      },
+      {
+        "claim_text": "这款包保修期为两年",
+        "claim_type": "fact",
+        "nli_status": "CONTRADICTED",
+        "reasoning": "Step 1: 核心断言为保修期两年。Step 2: KB明确写有“保修期：6个月”。Step 3: Claim中数值两年 vs KB中数值6个月，明显不一致。Step 7: 数值矛盾，判定为CONTRADICTED。",
+        "tool_trace": {
+          "numeric": {
+            "has_conflict": false,
+            "conflicts": [],
+            "amount_conflict": [],
+            "version_conflict": []
+          },
+          "polarity": {
+            "has_conflict": false,
+            "conflicts": []
+          },
+          "capability": {
+            "has_no_capability": false,
+            "capability_violation": false,
+            "unmarked_match": false,
+            "explicit_no_match": false
+          },
+          "kb_location": {
+            "overlap_ratio": 0.25,
+            "best_section": "材质：PU合成革。保修期：6个月。"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "id": "h07",
+    "is_hallucination": true,
+    "hallucination_type": "信息编造",
+    "severity": "High",
+    "detail": "回复编造了一个固定的退货地址（浙江省杭州市西湖区文三路478号）、收件人（张经理）和邮编（310012），而知识库明确指出退货地址根据商品类别不同而不同，需由系统自动匹配后以短信方式发送，人工客服不可口头告知。该地址并非真实固定地址，属于编造不存在的实体信息，构成信息编造。",
+    "claims": [
+      {
+        "claim_text": "退货地址为浙江省杭州市西湖区文三路478号",
+        "claim_type": "fact",
+        "nli_status": "CONTRADICTED",
+        "reasoning": "KB明确指出退货地址并非固定不变，而是根据商品类别和订单信息自动匹配后通过短信发送，人工客服不可口头告知。Claim给出的具体地址（浙江省杭州市西湖区文三路478号）暗示存在一个普适、固定的退货地址，与KB中“退货地址根据商品类别不同而不同”的机制根本矛盾。",
+        "tool_trace": {
+          "numeric": {
+            "has_conflict": false,
+            "conflicts": [],
+            "amount_conflict": [],
+            "version_conflict": []
+          },
+          "polarity": {
+            "has_conflict": false,
+            "conflicts": []
+          },
+          "capability": {
+            "has_no_capability": true,
+            "capability_violation": false,
+            "unmarked_match": false,
+            "explicit_no_match": false
+          },
+          "kb_location": {
+            "overlap_ratio": 0.15,
+            "best_section": "退货地址根据商品类别不同而不同，需由客服系统根据订单信息自动匹配后以短信方式发送。人工客服不可口头告知退货地址。"
+          }
+        }
+      },
+      {
+        "claim_text": "收件人为客服仓库张经理",
+        "claim_type": "fact",
+        "nli_status": "UNMENTIONED",
+        "reasoning": "KB仅说明退货地址由系统自动匹配并以短信发送，人工客服不可口头告知，但未提及任何具体的收件人信息（如“客服仓库张经理”）。Claim中提到的收件人姓名在KB中完全未涉及，也无法从KB中推断其存在与否，因此判定为UNMENTIONED。",
+        "tool_trace": {
+          "numeric": {
+            "has_conflict": false,
+            "conflicts": [],
+            "amount_conflict": [],
+            "version_conflict": []
+          },
+          "polarity": {
+            "has_conflict": false,
+            "conflicts": []
+          },
+          "capability": {
+            "has_no_capability": true,
+            "capability_violation": false,
+            "unmarked_match": false,
+            "explicit_no_match": false
+          },
+          "kb_location": {
+            "overlap_ratio": 0.1,
+            "best_section": "退货地址根据商品类别不同而不同，需由客服系统根据订单信息自动匹配后以短信方式发送。人工客服不可口头告知退货地址。"
+          }
+        }
+      },
+      {
+        "claim_text": "退货邮编为310012",
+        "claim_type": "fact",
+        "nli_status": "UNMENTIONED",
+        "reasoning": "声明声称退货邮编为310012，但知识库仅说明退货地址由系统根据订单自动匹配发送，未提供任何具体邮编信息，核心断言在知识库中完全未涉及。",
+        "tool_trace": {
+          "numeric": {
+            "has_conflict": false,
+            "conflicts": [],
+            "amount_conflict": [],
+            "version_conflict": []
+          },
+          "polarity": {
+            "has_conflict": false,
+            "conflicts": []
+          },
+          "capability": {
+            "has_no_capability": true,
+            "capability_violation": false,
+            "unmarked_match": false,
+            "explicit_no_match": false
+          },
+          "kb_location": {
+            "overlap_ratio": 0.1,
+            "best_section": "退货地址根据商品类别不同而不同，需由客服系统根据订单信息自动匹配后以短信方式发送。人工客服不可口头告知退货地址。"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "id": "h08",
+    "is_hallucination": true,
+    "hallucination_type": "政策编造",
+    "severity": "High",
+    "detail": "回复中发货时间声称“下单后48小时内发货”，与KB明确标注的“下单后24小时内发货”根本对立，属于完全编造错误政策；同时到货时间声称“大部分地区2-3天”与KB“一般3-5天”矛盾，亦属于政策编造。快递信息错误（顺丰 vs 中通/韵达/圆通）为辅助矛盾，主矛盾为发货和到货政策的完全编造，因此归类为政策编造，严重度High。",
+    "claims": [
+      {
+        "claim_text": "下单后48小时内发货",
+        "claim_type": "fact",
+        "nli_status": "CONTRADICTED",
+        "reasoning": "Claim称下单后48小时内发货，但KB明确标注发货时间为“下单后24小时内发货”。虽然48小时包含24小时，但KB的精确承诺是24小时，声明放宽到48小时，与KB的表述不一致。在事实核查中，如果KB给出了一个具体数值（24小时），而Claim给出另一个更大的数值（48小时），则构成矛盾，因为KB未提及允许放宽到48小时。",
+        "tool_trace": {
+          "numeric": {
+            "has_conflict": true,
+            "conflicts": [
+              {
+                "unit": "小时",
+                "claim_value": [
+                  48.0
+                ],
+                "kb_value": [
+                  24.0
+                ]
+              }
+            ],
+            "amount_conflict": [],
+            "version_conflict": []
+          },
+          "polarity": {
+            "has_conflict": false,
+            "conflicts": []
+          },
+          "capability": {
+            "has_no_capability": false,
+            "capability_violation": false,
+            "unmarked_match": false,
+            "explicit_no_match": false
+          },
+          "kb_location": {
+            "overlap_ratio": 0.667,
+            "best_section": "发货时间：下单后24小时内发货（预售商品除外）。合作快递：中通/韵达/圆通，具体以实际分配为准。到货时间：一般3-5天。"
+          }
+        }
+      },
+      {
+        "claim_text": "一般使用顺丰快递",
+        "claim_type": "fact",
+        "nli_status": "CONTRADICTED",
+        "reasoning": "KB明确列出合作快递为中通/韵达/圆通，未提及顺丰；声称“一般使用顺丰快递”与KB内容直接矛盾。",
+        "tool_trace": {
+          "numeric": {
+            "has_conflict": false,
+            "conflicts": [],
+            "amount_conflict": [],
+            "version_conflict": []
+          },
+          "polarity": {
+            "has_conflict": false,
+            "conflicts": []
+          },
+          "capability": {
+            "has_no_capability": false,
+            "capability_violation": false,
+            "unmarked_match": false,
+            "explicit_no_match": false
+          },
+          "kb_location": {
+            "overlap_ratio": 0.286,
+            "best_section": "发货时间：下单后24小时内发货（预售商品除外）。合作快递：中通/韵达/圆通，具体以实际分配为准。到货时间：一般3-5天。"
+          }
+        }
+      },
+      {
+        "claim_text": "大部分地区2-3天到货",
+        "claim_type": "fact",
+        "nli_status": "CONTRADICTED",
+        "reasoning": "KB明确到货时间一般3-5天，而Claim声称大部分地区2-3天，到货时间区间存在矛盾（Claim 2-3天 vs KB 3-5天），且工具数值比对结果为矛盾，故判定为CONTRADICTED。",
+        "tool_trace": {
+          "numeric": {
+            "has_conflict": true,
+            "conflicts": [
+              {
+                "unit": "天",
+                "claim_value": [
+                  3.0
+                ],
+                "kb_value": [
+                  5.0
+                ]
+              }
+            ],
+            "amount_conflict": [],
+            "version_conflict": []
+          },
+          "polarity": {
+            "has_conflict": false,
+            "conflicts": []
+          },
+          "capability": {
+            "has_no_capability": false,
+            "capability_violation": false,
+            "unmarked_match": false,
+            "explicit_no_match": false
+          },
+          "kb_location": {
+            "overlap_ratio": 0.111,
+            "best_section": "发货时间：下单后24小时内发货（预售商品除外）。合作快递：中通/韵达/圆通，具体以实际分配为准。到货时间：一般3-5天。"
+          }
+        }
+      },
+      {
+        "claim_text": "偏远地区可能需要5天到货",
+        "claim_type": "fact",
+        "nli_status": "ENTAILED",
+        "reasoning": "KB明确到货时间一般3-5天，5天在此范围内，声明称偏远地区可能需要5天，与KB信息一致。",
+        "tool_trace": {
+          "numeric": {
+            "has_conflict": false,
+            "conflicts": [],
+            "amount_conflict": [],
+            "version_conflict": []
+          },
+          "polarity": {
+            "has_conflict": false,
+            "conflicts": []
+          },
+          "capability": {
+            "has_no_capability": false,
+            "capability_violation": false,
+            "unmarked_match": false,
+            "explicit_no_match": false
+          },
+          "kb_location": {
+            "overlap_ratio": 0.182,
+            "best_section": "发货时间：下单后24小时内发货（预售商品除外）。合作快递：中通/韵达/圆通，具体以实际分配为准。到货时间：一般3-5天。"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "id": "h09",
+    "is_hallucination": true,
+    "hallucination_type": "参数编造",
+    "severity": "High",
+    "detail": "回复声称手机支持NFC功能并可实现公交卡、门禁卡和移动支付等具体用途，但知识库明确'产品参数中未标注NFC功能'，说明该功能不存在，属于编造产品硬件功能参数。",
+    "claims": [
+      {
+        "claim_text": "这款手机支持NFC功能",
+        "claim_type": "fact",
+        "nli_status": "CONTRADICTED",
+        "reasoning": "KB明确标注'产品参数中未标注NFC功能'，说明该手机未声明支持NFC，而Claim肯定其存在，构成直接矛盾。",
+        "tool_trace": {
+          "numeric": {
+            "has_conflict": false,
+            "conflicts": [],
+            "amount_conflict": [],
+            "version_conflict": []
+          },
+          "polarity": {
+            "has_conflict": false,
+            "conflicts": []
+          },
+          "capability": {
+            "has_no_capability": false,
+            "capability_violation": false,
+            "unmarked_match": true,
+            "explicit_no_match": false
+          },
+          "kb_location": {
+            "overlap_ratio": 0.143,
+            "best_section": "产品参数中未标注NFC功能。"
+          }
+        }
+      },
+      {
+        "claim_text": "这款手机的NFC可以用于公交卡、门禁卡和移动支付",
+        "claim_type": "fact",
+        "nli_status": "CONTRADICTED",
+        "reasoning": "声明声称手机具备NFC功能并可用于公交卡、门禁卡和移动支付，但知识库明确“产品参数中未标注NFC功能”。根据判定原则，KB未标注某功能即视为该功能不存在或未经确认，Claim肯定其存在构成根本矛盾，故判为CONTRADICTED。",
+        "tool_trace": {
+          "numeric": {
+            "has_conflict": false,
+            "conflicts": [],
+            "amount_conflict": [],
+            "version_conflict": []
+          },
+          "polarity": {
+            "has_conflict": false,
+            "conflicts": []
+          },
+          "capability": {
+            "has_no_capability": false,
+            "capability_violation": false,
+            "unmarked_match": false,
+            "explicit_no_match": false
+          },
+          "kb_location": {
+            "overlap_ratio": 0.0,
+            "best_section": "产品参数中未标注NFC功能。"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "id": "h10",
+    "is_hallucination": true,
+    "hallucination_type": "能力越界",
+    "severity": "Critical",
+    "detail": "声明1“已帮您查询了退款状态”是能力操作类，知识库明确客服系统未接入退款进度查询接口，系统不具备该操作能力，构成能力越界主矛盾，导致后续退款状态与到账时间的编造，因此整体判定为能力越界幻觉，严重度Critical。",
+    "claims": [
+      {
+        "claim_text": "已帮您查询了退款状态",
+        "claim_type": "action_tool",
+        "nli_status": "CONTRADICTED",
+        "reasoning": "能力越界：知识库表明系统不具备该操作能力（工具判定）",
+        "tool_trace": {
+          "numeric": {
+            "has_conflict": false,
+            "conflicts": [],
+            "amount_conflict": [],
+            "version_conflict": []
+          },
+          "polarity": {
+            "has_conflict": false,
+            "conflicts": []
+          },
+          "capability": {
+            "has_no_capability": true,
+            "capability_violation": true,
+            "unmarked_match": false,
+            "explicit_no_match": false
+          },
+          "kb_location": {
+            "overlap_ratio": 0.222,
+            "best_section": "无（客服系统未接入退款进度查询接口）"
+          }
+        }
+      },
+      {
+        "claim_text": "退款已经在处理中",
+        "claim_type": "fact",
+        "nli_status": "CONTRADICTED",
+        "reasoning": "KB明确指出客服系统未接入退款进度查询接口，因此系统无法获取或确认退款进度信息。Claim断言“退款已经在处理中”相当于声称存在可查询的退款进度状态，与该能力限制根本矛盾。",
+        "tool_trace": {
+          "numeric": {
+            "has_conflict": false,
+            "conflicts": [],
+            "amount_conflict": [],
+            "version_conflict": []
+          },
+          "polarity": {
+            "has_conflict": false,
+            "conflicts": []
+          },
+          "capability": {
+            "has_no_capability": true,
+            "capability_violation": false,
+            "unmarked_match": false,
+            "explicit_no_match": false
+          },
+          "kb_location": {
+            "overlap_ratio": 0.143,
+            "best_section": "无（客服系统未接入退款进度查询接口）"
+          }
+        }
+      },
+      {
+        "claim_text": "预计明天到账",
+        "claim_type": "fact",
+        "nli_status": "UNMENTIONED",
+        "reasoning": "KB明确声明客服系统未接入退款进度查询接口，未提供任何关于退款到账时间的信息，因此无法验证Claim中'预计明天到账'的断言。",
+        "tool_trace": {
+          "numeric": {
+            "has_conflict": false,
+            "conflicts": [],
+            "amount_conflict": [],
+            "version_conflict": []
+          },
+          "polarity": {
+            "has_conflict": false,
+            "conflicts": []
+          },
+          "capability": {
+            "has_no_capability": true,
+            "capability_violation": false,
+            "unmarked_match": false,
+            "explicit_no_match": false
+          },
+          "kb_location": {
+            "overlap_ratio": 0.0,
+            "best_section": "无（客服系统未接入退款进度查询接口）"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "id": "h11",
+    "is_hallucination": true,
+    "hallucination_type": "信息编造",
+    "severity": "High",
+    "detail": "回复声称在北京、上海、广州、深圳设有线下体验店，支持到店试穿，并可通过官网查询门店地址，但知识库明确该品牌为纯线上电商、无线下门店。所有声明均与KB根本矛盾，属于编造不存在的门店等事实信息，主矛盾为事实信息类实体编造，归类为信息编造，严重度为High。",
+    "claims": [
+      {
+        "claim_text": "我们在北京设有线下体验店",
+        "claim_type": "fact",
+        "nli_status": "CONTRADICTED",
+        "reasoning": "KB明确声明该品牌为纯线上电商品牌，无线下门店，而Claim声称在北京设有线下体验店，存在根本矛盾。",
+        "tool_trace": {
+          "numeric": {
+            "has_conflict": false,
+            "conflicts": [],
+            "amount_conflict": [],
+            "version_conflict": []
+          },
+          "polarity": {
+            "has_conflict": true,
+            "conflicts": [
+              {
+                "topic": "线下门店",
+                "claim_stance": "肯定",
+                "kb_stance": "否定",
+                "rule": "negation_pair"
+              }
+            ]
+          },
+          "capability": {
+            "has_no_capability": false,
+            "capability_violation": false,
+            "unmarked_match": false,
+            "explicit_no_match": false
+          },
+          "kb_location": {
+            "overlap_ratio": 0.091,
+            "best_section": "本品牌为纯线上电商品牌，无线下门店。"
+          }
+        }
+      },
+      {
+        "claim_text": "我们在上海设有线下体验店",
+        "claim_type": "fact",
+        "nli_status": "CONTRADICTED",
+        "reasoning": "KB明确声明'本品牌为纯线上电商品牌，无线下门店'，直接否定任何线下门店的存在（包括上海线下体验店），与 Claim 的肯定主张根本矛盾。",
+        "tool_trace": {
+          "numeric": {
+            "has_conflict": false,
+            "conflicts": [],
+            "amount_conflict": [],
+            "version_conflict": []
+          },
+          "polarity": {
+            "has_conflict": true,
+            "conflicts": [
+              {
+                "topic": "线下门店",
+                "claim_stance": "肯定",
+                "kb_stance": "否定",
+                "rule": "negation_pair"
+              }
+            ]
+          },
+          "capability": {
+            "has_no_capability": false,
+            "capability_violation": false,
+            "unmarked_match": false,
+            "explicit_no_match": false
+          },
+          "kb_location": {
+            "overlap_ratio": 0.091,
+            "best_section": "本品牌为纯线上电商品牌，无线下门店。"
+          }
+        }
+      },
+      {
+        "claim_text": "我们在广州设有线下体验店",
+        "claim_type": "fact",
+        "nli_status": "CONTRADICTED",
+        "reasoning": "KB明确声明品牌为纯线上电商品牌且无线下门店，而Claim声称在广州设有线下体验店，两者存在根本矛盾。",
+        "tool_trace": {
+          "numeric": {
+            "has_conflict": false,
+            "conflicts": [],
+            "amount_conflict": [],
+            "version_conflict": []
+          },
+          "polarity": {
+            "has_conflict": true,
+            "conflicts": [
+              {
+                "topic": "线下门店",
+                "claim_stance": "肯定",
+                "kb_stance": "否定",
+                "rule": "negation_pair"
+              }
+            ]
+          },
+          "capability": {
+            "has_no_capability": false,
+            "capability_violation": false,
+            "unmarked_match": false,
+            "explicit_no_match": false
+          },
+          "kb_location": {
+            "overlap_ratio": 0.091,
+            "best_section": "本品牌为纯线上电商品牌，无线下门店。"
+          }
+        }
+      },
+      {
+        "claim_text": "我们在深圳设有线下体验店",
+        "claim_type": "fact",
+        "nli_status": "CONTRADICTED",
+        "reasoning": "KB明确声明品牌为纯线上电商，无线下门店，Claim声称在深圳设有线下体验店，直接矛盾。",
+        "tool_trace": {
+          "numeric": {
+            "has_conflict": false,
+            "conflicts": [],
+            "amount_conflict": [],
+            "version_conflict": []
+          },
+          "polarity": {
+            "has_conflict": true,
+            "conflicts": [
+              {
+                "topic": "线下门店",
+                "claim_stance": "肯定",
+                "kb_stance": "否定",
+                "rule": "negation_pair"
+              }
+            ]
+          },
+          "capability": {
+            "has_no_capability": false,
+            "capability_violation": false,
+            "unmarked_match": false,
+            "explicit_no_match": false
+          },
+          "kb_location": {
+            "overlap_ratio": 0.091,
+            "best_section": "本品牌为纯线上电商品牌，无线下门店。"
+          }
+        }
+      },
+      {
+        "claim_text": "支持到店试穿后购买",
+        "claim_type": "fact",
+        "nli_status": "CONTRADICTED",
+        "reasoning": "声明声称支持到店试穿，但知识库明确说明该品牌为纯线上电商品牌，无线下门店。因此无法提供试穿服务，构成直接矛盾。",
+        "tool_trace": {
+          "numeric": {
+            "has_conflict": false,
+            "conflicts": [],
+            "amount_conflict": [],
+            "version_conflict": []
+          },
+          "polarity": {
+            "has_conflict": false,
+            "conflicts": []
+          },
+          "capability": {
+            "has_no_capability": false,
+            "capability_violation": false,
+            "unmarked_match": false,
+            "explicit_no_match": false
+          },
+          "kb_location": {
+            "overlap_ratio": 0.0,
+            "best_section": "本品牌为纯线上电商品牌，无线下门店。"
+          }
+        }
+      },
+      {
+        "claim_text": "具体门店地址可在官网的“门店查询”页面查看",
+        "claim_type": "fact",
+        "nli_status": "CONTRADICTED",
+        "reasoning": "KB明确指出'本品牌为纯线上电商品牌，无线下门店'，因此不存在门店地址可供查询。声明声称可通过官网查询门店地址，与KB存在根本矛盾。",
+        "tool_trace": {
+          "numeric": {
+            "has_conflict": false,
+            "conflicts": [],
+            "amount_conflict": [],
+            "version_conflict": []
+          },
+          "polarity": {
+            "has_conflict": false,
+            "conflicts": []
+          },
+          "capability": {
+            "has_no_capability": false,
+            "capability_violation": false,
+            "unmarked_match": false,
+            "explicit_no_match": false
+          },
+          "kb_location": {
+            "overlap_ratio": 0.059,
+            "best_section": "本品牌为纯线上电商品牌，无线下门店。"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "id": "h12",
+    "is_hallucination": false,
+    "hallucination_type": "无",
+    "severity": "None",
+    "detail": "所有原子声明均与知识库完全一致，不存在矛盾或遗漏，回复真实准确，无幻觉。",
+    "claims": [
+      {
+        "claim_text": "目前不支持货到付款",
+        "claim_type": "fact",
+        "nli_status": "ENTAILED",
+        "reasoning": "声明与KB内容完全一致：KB明确写明“不支持货到付款”，声明同样为“不支持货到付款”，不存在任何矛盾或信息缺失。",
+        "tool_trace": {
+          "numeric": {
+            "has_conflict": false,
+            "conflicts": [],
+            "amount_conflict": [],
+            "version_conflict": []
+          },
+          "polarity": {
+            "has_conflict": false,
+            "conflicts": []
+          },
+          "capability": {
+            "has_no_capability": false,
+            "capability_violation": false,
+            "unmarked_match": false,
+            "explicit_no_match": false
+          },
+          "kb_location": {
+            "overlap_ratio": 0.75,
+            "best_section": "支付方式：微信支付、支付宝、银行卡、花呗、信用卡。不支持货到付款。"
+          }
+        }
+      },
+      {
+        "claim_text": "支持微信在线支付",
+        "claim_type": "fact",
+        "nli_status": "ENTAILED",
+        "reasoning": "KB明确列出了微信支付作为支持的支付方式，声明与KB一致。",
+        "tool_trace": {
+          "numeric": {
+            "has_conflict": false,
+            "conflicts": [],
+            "amount_conflict": [],
+            "version_conflict": []
+          },
+          "polarity": {
+            "has_conflict": false,
+            "conflicts": []
+          },
+          "capability": {
+            "has_no_capability": false,
+            "capability_violation": false,
+            "unmarked_match": false,
+            "explicit_no_match": false
+          },
+          "kb_location": {
+            "overlap_ratio": 0.429,
+            "best_section": "支付方式：微信支付、支付宝、银行卡、花呗、信用卡。不支持货到付款。"
+          }
+        }
+      },
+      {
+        "claim_text": "支持支付宝在线支付",
+        "claim_type": "fact",
+        "nli_status": "ENTAILED",
+        "reasoning": "KB中明确列出支付宝作为支付方式之一，声明与KB一致。",
+        "tool_trace": {
+          "numeric": {
+            "has_conflict": false,
+            "conflicts": [],
+            "amount_conflict": [],
+            "version_conflict": []
+          },
+          "polarity": {
+            "has_conflict": false,
+            "conflicts": []
+          },
+          "capability": {
+            "has_no_capability": false,
+            "capability_violation": false,
+            "unmarked_match": false,
+            "explicit_no_match": false
+          },
+          "kb_location": {
+            "overlap_ratio": 0.429,
+            "best_section": "支付方式：微信支付、支付宝、银行卡、花呗、信用卡。不支持货到付款。"
+          }
+        }
+      },
+      {
+        "claim_text": "支持银行卡在线支付",
+        "claim_type": "fact",
+        "nli_status": "ENTAILED",
+        "reasoning": "KB明确列出银行卡为支付方式之一，声明内容与KB一致，故判定为ENTAILED。",
+        "tool_trace": {
+          "numeric": {
+            "has_conflict": false,
+            "conflicts": [],
+            "amount_conflict": [],
+            "version_conflict": []
+          },
+          "polarity": {
+            "has_conflict": false,
+            "conflicts": []
+          },
+          "capability": {
+            "has_no_capability": false,
+            "capability_violation": false,
+            "unmarked_match": false,
+            "explicit_no_match": false
+          },
+          "kb_location": {
+            "overlap_ratio": 0.5,
+            "best_section": "支付方式：微信支付、支付宝、银行卡、花呗、信用卡。不支持货到付款。"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "id": "h13",
+    "is_hallucination": true,
+    "hallucination_type": "安全误导",
+    "severity": "Critical",
+    "detail": "回复声称孕妇可以放心使用，但知识库明确指出含视黄醇衍生物且孕妇及哺乳期女性建议咨询医生后使用，直接给出绝对安全保证构成安全误导，可能危害孕妇健康。",
+    "claims": [
+      {
+        "claim_text": "这款面膜成分温和",
+        "claim_type": "fact",
+        "nli_status": "CONTRADICTED",
+        "reasoning": "知识库明确指出含视黄醇衍生物且孕妇及哺乳期女性需咨询医生后使用，此类成分存在一定风险，并非绝对温和；声明‘成分温和’给人的安全印象与注意事项中的限制存在矛盾，故判定为矛盾。",
+        "tool_trace": {
+          "numeric": {
+            "has_conflict": false,
+            "conflicts": [],
+            "amount_conflict": [],
+            "version_conflict": []
+          },
+          "polarity": {
+            "has_conflict": false,
+            "conflicts": []
+          },
+          "capability": {
+            "has_no_capability": false,
+            "capability_violation": false,
+            "unmarked_match": false,
+            "explicit_no_match": false
+          },
+          "kb_location": {
+            "overlap_ratio": 0.143,
+            "best_section": "成分：水、甘油、烟酰胺(2%)、视黄醇棕榈酸酯、透明质酸钠。注意事项：含视黄醇衍生物，孕妇及哺乳期女性建议咨询医生后使用。"
+          }
+        }
+      },
+      {
+        "claim_text": "这款面膜不含酒精香精",
+        "claim_type": "fact",
+        "nli_status": "ENTAILED",
+        "reasoning": "知识库列出的成分（水、甘油、烟酰胺、视黄醇棕榈酸酯、透明质酸钠）中不包含酒精或香精，且注意事项仅涉及视黄醇衍生物与孕妇咨询建议，未对酒精香精作出限制。因此，声明“不含酒精香精”与知识库信息一致。",
+        "tool_trace": {
+          "numeric": {
+            "has_conflict": false,
+            "conflicts": [],
+            "amount_conflict": [],
+            "version_conflict": []
+          },
+          "polarity": {
+            "has_conflict": false,
+            "conflicts": []
+          },
+          "capability": {
+            "has_no_capability": false,
+            "capability_violation": false,
+            "unmarked_match": false,
+            "explicit_no_match": false
+          },
+          "kb_location": {
+            "overlap_ratio": 0.0,
+            "best_section": "成分：水、甘油、烟酰胺(2%)、视黄醇棕榈酸酯、透明质酸钠。注意事项：含视黄醇衍生物，孕妇及哺乳期女性建议咨询医生后使用。"
+          }
+        }
+      },
+      {
+        "claim_text": "这款面膜孕妇可以放心使用",
+        "claim_type": "fact",
+        "nli_status": "CONTRADICTED",
+        "reasoning": "声明声称孕妇可放心使用，但KB明确提示‘孕妇及哺乳期女性建议咨询医生后使用’，属于安全限制，与绝对安全保证矛盾。",
+        "tool_trace": {
+          "numeric": {
+            "has_conflict": false,
+            "conflicts": [],
+            "amount_conflict": [],
+            "version_conflict": []
+          },
+          "polarity": {
+            "has_conflict": false,
+            "conflicts": []
+          },
+          "capability": {
+            "has_no_capability": false,
+            "capability_violation": false,
+            "unmarked_match": false,
+            "explicit_no_match": false
+          },
+          "kb_location": {
+            "overlap_ratio": 0.182,
+            "best_section": "成分：水、甘油、烟酰胺(2%)、视黄醇棕榈酸酯、透明质酸钠。注意事项：含视黄醇衍生物，孕妇及哺乳期女性建议咨询医生后使用。"
+          }
+        }
+      },
+      {
+        "claim_text": "很多孕妈都在回购这款面膜",
+        "claim_type": "fact",
+        "nli_status": "UNMENTIONED",
+        "reasoning": "KB仅提供产品成分及孕妇需咨询医生的注意事项，未提及任何关于孕妈用户回购行为的数据或信息，声明内容无法从KB中得到证实或证伪。",
+        "tool_trace": {
+          "numeric": {
+            "has_conflict": false,
+            "conflicts": [],
+            "amount_conflict": [],
+            "version_conflict": []
+          },
+          "polarity": {
+            "has_conflict": false,
+            "conflicts": []
+          },
+          "capability": {
+            "has_no_capability": false,
+            "capability_violation": false,
+            "unmarked_match": false,
+            "explicit_no_match": false
+          },
+          "kb_location": {
+            "overlap_ratio": 0.0,
+            "best_section": "成分：水、甘油、烟酰胺(2%)、视黄醇棕榈酸酯、透明质酸钠。注意事项：含视黄醇衍生物，孕妇及哺乳期女性建议咨询医生后使用。"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "id": "h14",
+    "is_hallucination": true,
+    "hallucination_type": "能力越界",
+    "severity": "Critical",
+    "detail": "回复声称“已帮您修改了新地址”并承诺“包裹将在明天以新地址发出”，但知识库明确客服系统未接入订单修改接口，不具备自动修改地址的能力。该矛盾属于能力操作类的根本性错误，构成能力越界幻觉。",
+    "claims": [
+      {
+        "claim_text": "已帮您修改了收货地址",
+        "claim_type": "action_tool",
+        "nli_status": "CONTRADICTED",
+        "reasoning": "能力越界：知识库表明系统不具备该操作能力（工具判定）",
+        "tool_trace": {
+          "numeric": {
+            "has_conflict": false,
+            "conflicts": [],
+            "amount_conflict": [],
+            "version_conflict": []
+          },
+          "polarity": {
+            "has_conflict": false,
+            "conflicts": []
+          },
+          "capability": {
+            "has_no_capability": true,
+            "capability_violation": true,
+            "unmarked_match": false,
+            "explicit_no_match": false
+          },
+          "kb_location": {
+            "overlap_ratio": 0.111,
+            "best_section": "无（客服系统未接入订单修改接口，需人工后台操作）"
+          }
+        }
+      },
+      {
+        "claim_text": "新收货地址是北京市朝阳区建国路88号",
+        "claim_type": "fact",
+        "nli_status": "UNMENTIONED",
+        "reasoning": "KB仅说明客服系统未接入订单修改接口，未提及任何地址信息，无法核实该声明。",
+        "tool_trace": {
+          "numeric": {
+            "has_conflict": false,
+            "conflicts": [],
+            "amount_conflict": [],
+            "version_conflict": []
+          },
+          "polarity": {
+            "has_conflict": false,
+            "conflicts": []
+          },
+          "capability": {
+            "has_no_capability": true,
+            "capability_violation": false,
+            "unmarked_match": false,
+            "explicit_no_match": false
+          },
+          "kb_location": {
+            "overlap_ratio": 0.0,
+            "best_section": "无（客服系统未接入订单修改接口，需人工后台操作）"
+          }
+        }
+      },
+      {
+        "claim_text": "包裹将在明天以新地址发出",
+        "claim_type": "fact",
+        "nli_status": "CONTRADICTED",
+        "reasoning": "声明断言包裹会于明天按修改后的新地址发出，隐含地址已成功即时修改且可正常发货。但知识库明确指出客服系统未接入订单修改接口，需人工后台操作，即系统能力不支持直接修改订单。因此，在系统无法自动修改地址的前提下，明日按新地址发出的承诺与系统实际能力存在根本矛盾，故判定为矛盾。",
+        "tool_trace": {
+          "numeric": {
+            "has_conflict": false,
+            "conflicts": [],
+            "amount_conflict": [],
+            "version_conflict": []
+          },
+          "polarity": {
+            "has_conflict": false,
+            "conflicts": []
+          },
+          "capability": {
+            "has_no_capability": true,
+            "capability_violation": false,
+            "unmarked_match": false,
+            "explicit_no_match": false
+          },
+          "kb_location": {
+            "overlap_ratio": 0.0,
+            "best_section": "无（客服系统未接入订单修改接口，需人工后台操作）"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "id": "h15",
+    "is_hallucination": true,
+    "hallucination_type": "信息编造",
+    "severity": "High",
+    "detail": "回复声称是XX品牌旗下的子品牌，并编造共享供应链、品控标准等关联关系，与KB明确“未提及其他品牌关联关系”根本矛盾，属于编造不存在的实体品牌关系信息。",
+    "claims": [
+      {
+        "claim_text": "我们是XX品牌旗下的子品牌",
+        "claim_type": "fact",
+        "nli_status": "CONTRADICTED",
+        "reasoning": "KB明确声明'品牌介绍中未提及其他品牌关联关系'，即未提及任何子品牌或关联关系；而Claim肯定存在'XX品牌旗下的子品牌'关系，与KB直接冲突。依据'KB未标注即视为否定'原则，判定为矛盾。",
+        "tool_trace": {
+          "numeric": {
+            "has_conflict": false,
+            "conflicts": [],
+            "amount_conflict": [],
+            "version_conflict": []
+          },
+          "polarity": {
+            "has_conflict": false,
+            "conflicts": []
+          },
+          "capability": {
+            "has_no_capability": false,
+            "capability_violation": false,
+            "unmarked_match": false,
+            "explicit_no_match": false
+          },
+          "kb_location": {
+            "overlap_ratio": 0.111,
+            "best_section": "品牌介绍中未提及其他品牌关联关系。"
+          }
+        }
+      },
+      {
+        "claim_text": "我们与XX品牌共享同样的供应链",
+        "claim_type": "fact",
+        "nli_status": "CONTRADICTED",
+        "reasoning": "KB明确声明“未提及其他品牌关联关系”，即未描述与任何其他品牌存在共享供应链等关联关系，而Claim肯定断言“与XX品牌共享同样的供应链”，构成直接矛盾。根据判定原则第4条，KB未提及即视为否定，因此判定为CONTRADICTED。",
+        "tool_trace": {
+          "numeric": {
+            "has_conflict": false,
+            "conflicts": [],
+            "amount_conflict": [],
+            "version_conflict": []
+          },
+          "polarity": {
+            "has_conflict": false,
+            "conflicts": []
+          },
+          "capability": {
+            "has_no_capability": false,
+            "capability_violation": false,
+            "unmarked_match": false,
+            "explicit_no_match": false
+          },
+          "kb_location": {
+            "overlap_ratio": 0.083,
+            "best_section": "品牌介绍中未提及其他品牌关联关系。"
+          }
+        }
+      },
+      {
+        "claim_text": "我们与XX品牌共享同样的品控标准",
+        "claim_type": "fact",
+        "nli_status": "CONTRADICTED",
+        "reasoning": "KB明确声明品牌介绍中未提及其他品牌关联关系，而Claim断言与XX品牌共享品控标准，属于声称存在关联关系，与KB的“未提及”状态相矛盾，根据判定原则4，判为CONTRADICTED。",
+        "tool_trace": {
+          "numeric": {
+            "has_conflict": false,
+            "conflicts": [],
+            "amount_conflict": [],
+            "version_conflict": []
+          },
+          "polarity": {
+            "has_conflict": false,
+            "conflicts": []
+          },
+          "capability": {
+            "has_no_capability": false,
+            "capability_violation": false,
+            "unmarked_match": false,
+            "explicit_no_match": false
+          },
+          "kb_location": {
+            "overlap_ratio": 0.077,
+            "best_section": "品牌介绍中未提及其他品牌关联关系。"
+          }
+        }
+      },
+      {
+        "claim_text": "我们的价格比XX品牌更亲民",
+        "claim_type": "fact",
+        "nli_status": "CONTRADICTED",
+        "reasoning": "KB明确说明“未提及其他品牌关联关系”，即KB内容中不包含任何与其他品牌比较的信息。Claim声称“我们的价格比XX品牌更亲民”，属于一种品牌价格关联的比较，与KB所述“未提及”的状态矛盾。根据原则4，KB明确未提及的内容视为否定，Claim声称其存在即构成矛盾。",
+        "tool_trace": {
+          "numeric": {
+            "has_conflict": false,
+            "conflicts": [],
+            "amount_conflict": [],
+            "version_conflict": []
+          },
+          "polarity": {
+            "has_conflict": false,
+            "conflicts": []
+          },
+          "capability": {
+            "has_no_capability": false,
+            "capability_violation": false,
+            "unmarked_match": false,
+            "explicit_no_match": false
+          },
+          "kb_location": {
+            "overlap_ratio": 0.1,
+            "best_section": "品牌介绍中未提及其他品牌关联关系。"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "id": "h16",
+    "is_hallucination": false,
+    "hallucination_type": "无",
+    "severity": "None",
+    "detail": "所有声明均与知识库一致，不存在矛盾或遗漏。",
+    "claims": [
+      {
+        "claim_text": "商品图片都是实物拍摄的",
+        "claim_type": "fact",
+        "nli_status": "ENTAILED",
+        "reasoning": "核心断言为商品图片源自实物拍摄。KB提到“拍摄光线”等拍摄相关因素，隐含图片是通过实物拍摄获得的，与声明一致，无矛盾。",
+        "tool_trace": {
+          "numeric": {
+            "has_conflict": false,
+            "conflicts": [],
+            "amount_conflict": [],
+            "version_conflict": []
+          },
+          "polarity": {
+            "has_conflict": false,
+            "conflicts": []
+          },
+          "capability": {
+            "has_no_capability": false,
+            "capability_violation": false,
+            "unmarked_match": false,
+            "explicit_no_match": false
+          },
+          "kb_location": {
+            "overlap_ratio": 0.5,
+            "best_section": "温馨提示：商品图片因拍摄光线、显示器色差等原因，可能与实物存在轻微色差，请以实物为准。"
+          }
+        }
+      },
+      {
+        "claim_text": "颜色基本准确",
+        "claim_type": "fact",
+        "nli_status": "ENTAILED",
+        "reasoning": "KB指出因拍摄光线和显示器色差可能导致图片与实物存在轻微色差，这与声明‘颜色基本准确’并不矛盾。‘基本准确’意味着大致准确且允许轻微偏差，与KB描述的轻微色差情况一致，无明确对立或数值矛盾。",
+        "tool_trace": {
+          "numeric": {
+            "has_conflict": false,
+            "conflicts": [],
+            "amount_conflict": [],
+            "version_conflict": []
+          },
+          "polarity": {
+            "has_conflict": false,
+            "conflicts": []
+          },
+          "capability": {
+            "has_no_capability": false,
+            "capability_violation": false,
+            "unmarked_match": false,
+            "explicit_no_match": false
+          },
+          "kb_location": {
+            "overlap_ratio": 0.0,
+            "best_section": "温馨提示：商品图片因拍摄光线、显示器色差等原因，可能与实物存在轻微色差，请以实物为准。"
+          }
+        }
+      },
+      {
+        "claim_text": "不同手机屏幕可能会有轻微色差",
+        "claim_type": "fact",
+        "nli_status": "ENTAILED",
+        "reasoning": "KB 明确指出“显示器色差等原因”可能导致商品图片与实物存在轻微色差，其中“显示器”涵盖了手机屏幕，声明与 KB 的表述一致，无矛盾。",
+        "tool_trace": {
+          "numeric": {
+            "has_conflict": false,
+            "conflicts": [],
+            "amount_conflict": [],
+            "version_conflict": []
+          },
+          "polarity": {
+            "has_conflict": false,
+            "conflicts": []
+          },
+          "capability": {
+            "has_no_capability": false,
+            "capability_violation": false,
+            "unmarked_match": false,
+            "explicit_no_match": false
+          },
+          "kb_location": {
+            "overlap_ratio": 0.308,
+            "best_section": "温馨提示：商品图片因拍摄光线、显示器色差等原因，可能与实物存在轻微色差，请以实物为准。"
+          }
+        }
+      },
+      {
+        "claim_text": "轻微色差是正常现象",
+        "claim_type": "fact",
+        "nli_status": "ENTAILED",
+        "reasoning": "KB 明确指出商品图片可能与实物存在轻微色差，并提示以实物为准，这间接承认了轻微色差是常见且可预期的现象，与声明'轻微色差是正常现象'的立场一致，无矛盾。",
+        "tool_trace": {
+          "numeric": {
+            "has_conflict": false,
+            "conflicts": [],
+            "amount_conflict": [],
+            "version_conflict": []
+          },
+          "polarity": {
+            "has_conflict": false,
+            "conflicts": []
+          },
+          "capability": {
+            "has_no_capability": false,
+            "capability_violation": false,
+            "unmarked_match": false,
+            "explicit_no_match": false
+          },
+          "kb_location": {
+            "overlap_ratio": 0.375,
+            "best_section": "温馨提示：商品图片因拍摄光线、显示器色差等原因，可能与实物存在轻微色差，请以实物为准。"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "id": "h17",
+    "is_hallucination": true,
+    "hallucination_type": "参数编造",
+    "severity": "High",
+    "detail": "回复声称充电头是Type-C接口，但知识库明确指出接口为USB-A输出，属于产品参数矛盾，构成参数编造。",
+    "claims": [
+      {
+        "claim_text": "这款充电头是Type-C接口",
+        "claim_type": "fact",
+        "nli_status": "CONTRADICTED",
+        "reasoning": "KB明确说明充电头接口类型为USB-A输出，而非Type-C接口，声明声称是Type-C接口，与KB事实矛盾。",
+        "tool_trace": {
+          "numeric": {
+            "has_conflict": false,
+            "conflicts": [],
+            "amount_conflict": [],
+            "version_conflict": []
+          },
+          "polarity": {
+            "has_conflict": false,
+            "conflicts": []
+          },
+          "capability": {
+            "has_no_capability": false,
+            "capability_violation": false,
+            "unmarked_match": false,
+            "explicit_no_match": false
+          },
+          "kb_location": {
+            "overlap_ratio": 0.286,
+            "best_section": "接口类型：USB-A输出。附带一根USB-A to Type-C充电线。"
+          }
+        }
+      },
+      {
+        "claim_text": "这款充电头兼容市面上大多数手机和平板",
+        "claim_type": "fact",
+        "nli_status": "UNMENTIONED",
+        "reasoning": "KB仅提供了充电头的接口类型（USB-A）和附带的充电线类型，未提及该充电头对手机或平板的兼容性信息，因此无法判断声明真伪。",
+        "tool_trace": {
+          "numeric": {
+            "has_conflict": false,
+            "conflicts": [],
+            "amount_conflict": [],
+            "version_conflict": []
+          },
+          "polarity": {
+            "has_conflict": false,
+            "conflicts": []
+          },
+          "capability": {
+            "has_no_capability": false,
+            "capability_violation": false,
+            "unmarked_match": false,
+            "explicit_no_match": false
+          },
+          "kb_location": {
+            "overlap_ratio": 0.059,
+            "best_section": "接口类型：USB-A输出。附带一根USB-A to Type-C充电线。"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "id": "h18",
+    "is_hallucination": true,
+    "hallucination_type": "能力越界",
+    "severity": "Critical",
+    "detail": "回复声称已将投诉升级为高级工单，但知识库明确指出客服系统不具备工单升级功能，系统实际上无法执行该操作，属于典型的能力越界幻觉。同时，承诺“专属客服2小时内联系”在知识库中未提及，但主矛盾仍为能力越界。",
+    "claims": [
+      {
+        "claim_text": "已帮您将投诉升级为高级工单",
+        "claim_type": "action_tool",
+        "nli_status": "CONTRADICTED",
+        "reasoning": "能力越界：知识库表明系统不具备该操作能力（工具判定）",
+        "tool_trace": {
+          "numeric": {
+            "has_conflict": false,
+            "conflicts": [],
+            "amount_conflict": [],
+            "version_conflict": []
+          },
+          "polarity": {
+            "has_conflict": false,
+            "conflicts": []
+          },
+          "capability": {
+            "has_no_capability": true,
+            "capability_violation": true,
+            "unmarked_match": false,
+            "explicit_no_match": false
+          },
+          "kb_location": {
+            "overlap_ratio": 0.167,
+            "best_section": "无（客服系统不具备工单升级功能，需转人工处理）"
+          }
+        }
+      },
+      {
+        "claim_text": "您的投诉工单已升级为高级工单",
+        "claim_type": "fact",
+        "nli_status": "CONTRADICTED",
+        "reasoning": "知识库明确指出客服系统不具备工单升级功能，而声明声称工单已升级为高级工单，两者存在根本矛盾。",
+        "tool_trace": {
+          "numeric": {
+            "has_conflict": false,
+            "conflicts": [],
+            "amount_conflict": [],
+            "version_conflict": []
+          },
+          "polarity": {
+            "has_conflict": false,
+            "conflicts": []
+          },
+          "capability": {
+            "has_no_capability": true,
+            "capability_violation": false,
+            "unmarked_match": false,
+            "explicit_no_match": false
+          },
+          "kb_location": {
+            "overlap_ratio": 0.167,
+            "best_section": "无（客服系统不具备工单升级功能，需转人工处理）"
+          }
+        }
+      },
+      {
+        "claim_text": "会有专属客服在2小时内联系您处理",
+        "claim_type": "fact",
+        "nli_status": "UNMENTIONED",
+        "reasoning": "知识库仅说明客服系统不具备工单升级功能、需转人工处理，未涉及“专属客服2小时内联系”的服务承诺或时间限制，声明核心事实未被KB覆盖且无矛盾。",
+        "tool_trace": {
+          "numeric": {
+            "has_conflict": false,
+            "conflicts": [],
+            "amount_conflict": [],
+            "version_conflict": []
+          },
+          "polarity": {
+            "has_conflict": false,
+            "conflicts": []
+          },
+          "capability": {
+            "has_no_capability": true,
+            "capability_violation": false,
+            "unmarked_match": false,
+            "explicit_no_match": false
+          },
+          "kb_location": {
+            "overlap_ratio": 0.133,
+            "best_section": "无（客服系统不具备工单升级功能，需转人工处理）"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "id": "h19",
+    "is_hallucination": true,
+    "hallucination_type": "优惠编造",
+    "severity": "High",
+    "detail": "回复声称存在学生优惠（9折、'学生认证'操作），但知识库明确当前无任何学生优惠政策，属于完全虚构的优惠信息，构成优惠编造。",
+    "claims": [
+      {
+        "claim_text": "有学生优惠",
+        "claim_type": "fact",
+        "nli_status": "CONTRADICTED",
+        "reasoning": "KB明确指出“当前无学生优惠政策”，而Claim声称“有学生优惠”，存在明确的极性对立，因此矛盾。",
+        "tool_trace": {
+          "numeric": {
+            "has_conflict": false,
+            "conflicts": [],
+            "amount_conflict": [],
+            "version_conflict": []
+          },
+          "polarity": {
+            "has_conflict": false,
+            "conflicts": []
+          },
+          "capability": {
+            "has_no_capability": false,
+            "capability_violation": false,
+            "unmarked_match": false,
+            "explicit_no_match": false
+          },
+          "kb_location": {
+            "overlap_ratio": 0.75,
+            "best_section": "当前无学生优惠政策。"
+          }
+        }
+      },
+      {
+        "claim_text": "凭学生证可以享受9折优惠",
+        "claim_type": "fact",
+        "nli_status": "CONTRADICTED",
+        "reasoning": "Claim声称凭学生证可享受9折优惠，但KB明确表示当前无学生优惠政策，两者存在根本矛盾。",
+        "tool_trace": {
+          "numeric": {
+            "has_conflict": false,
+            "conflicts": [],
+            "amount_conflict": [],
+            "version_conflict": []
+          },
+          "polarity": {
+            "has_conflict": false,
+            "conflicts": []
+          },
+          "capability": {
+            "has_no_capability": false,
+            "capability_violation": false,
+            "unmarked_match": false,
+            "explicit_no_match": false
+          },
+          "kb_location": {
+            "overlap_ratio": 0.182,
+            "best_section": "当前无学生优惠政策。"
+          }
+        }
+      },
+      {
+        "claim_text": "在结算时选择'学生认证'即可",
+        "claim_type": "fact",
+        "nli_status": "CONTRADICTED",
+        "reasoning": "Claim声称结算时可通过“学生认证”方式操作，暗示存在学生优惠政策或相关选项；但KB明确声明“当前无学生优惠政策”，两者根本矛盾，因此判定为CONTRADICTED。",
+        "tool_trace": {
+          "numeric": {
+            "has_conflict": false,
+            "conflicts": [],
+            "amount_conflict": [],
+            "version_conflict": []
+          },
+          "polarity": {
+            "has_conflict": false,
+            "conflicts": []
+          },
+          "capability": {
+            "has_no_capability": false,
+            "capability_violation": false,
+            "unmarked_match": false,
+            "explicit_no_match": false
+          },
+          "kb_location": {
+            "overlap_ratio": 0.091,
+            "best_section": "当前无学生优惠政策。"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "id": "h20",
+    "is_hallucination": true,
+    "hallucination_type": "信息遗漏",
+    "severity": "Medium",
+    "detail": "回复声称鞋子尺码标准不偏，但知识库显示约30%用户反馈偏大半码，建议脚瘦者选小半码。回复给出绝对断言并忽略这一关键信息，属于信息遗漏。",
+    "claims": [
+      {
+        "claim_text": "这款鞋尺码标准，不偏大也不偏小",
+        "claim_type": "fact",
+        "nli_status": "CONTRADICTED",
+        "reasoning": "KB明确指出约30%的用户反馈偏大半码，并建议脚瘦者选小半码，这表明鞋子存在偏大的情况。Claim声称“不偏大也不偏小”，与KB的用户反馈矛盾，因此判为CONTRADICTED。",
+        "tool_trace": {
+          "numeric": {
+            "has_conflict": false,
+            "conflicts": [],
+            "amount_conflict": [],
+            "version_conflict": []
+          },
+          "polarity": {
+            "has_conflict": false,
+            "conflicts": []
+          },
+          "capability": {
+            "has_no_capability": false,
+            "capability_violation": false,
+            "unmarked_match": false,
+            "explicit_no_match": false
+          },
+          "kb_location": {
+            "overlap_ratio": 0.077,
+            "best_section": "用户评价汇总：约30%的用户反馈偏大半码，建议脚瘦的用户选小半码。"
+          }
+        }
+      },
+      {
+        "claim_text": "按照您平时穿的尺码选就可以了",
+        "claim_type": "fact",
+        "nli_status": "CONTRADICTED",
+        "reasoning": "KB指出约30%用户反馈偏大半码，并建议脚瘦用户选小半码，而声明称“按平时尺码选就可以了”，忽略尺码偏大的问题并给出通用建议，与KB的特定建议矛盾。",
+        "tool_trace": {
+          "numeric": {
+            "has_conflict": false,
+            "conflicts": [],
+            "amount_conflict": [],
+            "version_conflict": []
+          },
+          "polarity": {
+            "has_conflict": false,
+            "conflicts": []
+          },
+          "capability": {
+            "has_no_capability": false,
+            "capability_violation": false,
+            "unmarked_match": false,
+            "explicit_no_match": false
+          },
+          "kb_location": {
+            "overlap_ratio": 0.0,
+            "best_section": "用户评价汇总：约30%的用户反馈偏大半码，建议脚瘦的用户选小半码。"
+          }
+        }
+      }
+    ]
+  }
+]
